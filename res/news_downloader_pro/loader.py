@@ -9,8 +9,8 @@ class Loader:
             my_name = my_dir.split('\\')[-1]
             self.path = f'{sys.path[0]}\\..\\..\\{my_name}'
         else:
-            my_name = my_dir.split('//')[-1]
-            self.path = f'{sys.path[0]}//..//..//{my_name}'
+            my_name = my_dir.split('/')[-1]
+            self.path = f'{sys.path[0]}/../../{my_name}'
 
     def load_conf(self):
         with open(f'{self.path}.yml', 'r', encoding='utf-8') as f:
