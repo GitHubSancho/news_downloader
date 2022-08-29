@@ -5,8 +5,12 @@ import yaml
 class Loader:
     def __init__(self) -> None:
         my_dir = sys.path[0]
-        my_name = my_dir.split('\\')[-1]
-        self.path = f'{sys.path[0]}\\..\\..\\{my_name}'
+        if sys.platform == 'win32':
+            my_name = my_dir.split('\\')[-1]
+            self.path = f'{sys.path[0]}\\..\\..\\{my_name}'
+        else:
+            my_name = my_dir.split('//')[-1]
+            self.path = f'{sys.path[0]}//..//..//{my_name}'
 
     def load_conf(self):
         with open(f'{self.path}.yml', 'r', encoding='utf-8') as f:
