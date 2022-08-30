@@ -8,3 +8,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: 12345678
+
+  engine:
+    build: ./
+    ports:
+      - "27018:27017"
+    environment:
+      - TZ=Asia/Shanghai
