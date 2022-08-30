@@ -13,4 +13,8 @@ services:
     build: /opt/news_downloader_pro
     image: news_downloader_pro:v0.9
     restart: always
-    command: [ "ls", "/opt/news_downloader_pro" ]
+    command:
+      [
+        "ls",
+        "/opt/news_downloader_pro/res/news_downloader_pro/"
+      ]
