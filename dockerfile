@@ -23,4 +23,15 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
     && conda install aiohttp -y \
     && conda install psutil -y 
 
+RUN systemctl stop firewalld \
+    && systemctl disable firewalld \
+    && setenforce 0 \
+    && sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/sysconfig/selinux \
+    && sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config \
+    && sudo yum -y install mongodb-org \
+    && sudo sed -i '/bindIp/{s/127.0.0.1/0.0.0.0/}' /etc/mongod.conf \
+    && sudo sed -i '/^#security/a\security:\n  authorization: enabled' /etc/mongod.conf \
+    && sudo systemctl start mongod \
+    && sudo systemctl enable mongod
+
 CMD ["python","main.py"]
