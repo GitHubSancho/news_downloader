@@ -10,6 +10,6 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: 12345678
 
   engine:
-    build: /opt/news_downloader_pro
+    build: ./
     image: news_downloader_pro:v0.9
     restart: always
