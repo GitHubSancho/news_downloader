@@ -1,6 +1,7 @@
 version: '0.9'
 services:
   news_downloader_pro:
+    build: .
     environment:
       - TZ=Asia/Shanghai
   mongo:
