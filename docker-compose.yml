@@ -16,5 +16,5 @@ services:
     command:
       [
         "ls",
-        "/opt/news_downloader_pro/res/news_downloader_pro/"
+        "/opt/news_downloader_pro/res/news_downloader_pro/test/test.py"
       ]
