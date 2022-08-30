@@ -2,12 +2,12 @@ version: '4.0'
 
 services:
 
-  mongo:
-    image: mongo:5.0
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 12345678
+  # mongo:
+  #   image: mongo:5.0
+  #   restart: always
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: 12345678
 
   engine:
     build: /opt/news_downloader_pro
