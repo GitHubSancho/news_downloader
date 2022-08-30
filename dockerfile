@@ -31,6 +31,6 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
 #     && sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo \
 #     && yum install mongodb-org -y\
 #     && systemctl start mongod.service
-
+RUN mongo --version
 # CMD ["python","main.py"]
 CMD ["/bin/bash"]
