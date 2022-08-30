@@ -15,6 +15,7 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
     && conda config --set show_channel_urls yes \
     && source /opt/conda/etc/profile.d/conda.sh \
     && conda activate base \
+    && conda update -n base -c defaults conda \
     && conda install pyyaml -y \
     && conda install pymongo -y \
     && conda install -c conda-forge motor -y \
@@ -22,4 +23,4 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
     && conda install aiohttp -y \
     && conda install psutil -y 
 
-CMD ["/bin/bash","python main.py"]
+CMD ["python main.py"]
