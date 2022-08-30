@@ -11,8 +11,3 @@ services:
 
   engine:
     build: ./
-    restart: always
-    ports:
-      - "27018:27017"
-    environment:
-      - TZ=Asia/Shanghai
