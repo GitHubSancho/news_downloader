@@ -6,9 +6,9 @@ import asyncio
 from concurrent.futures import ProcessPoolExecutor
 import aiohttp
 import psutil
-from loader import Loader
-from connection import Mongo
-from downloader import Downloader
-from html_parser import Parser
+from news_downloader_pro.loader import Loader
+from news_downloader_pro.connection import Mongo
+from news_downloader_pro.downloader import Downloader
+from news_downloader_pro.html_parser import Parser
 
 print("hello")
