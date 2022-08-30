@@ -11,3 +11,4 @@ services:
 
   engine:
     build: ./
+    restart: always
