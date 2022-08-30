@@ -19,8 +19,8 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
     && conda install pyyaml -y \
     && conda install pymongo -y \
     && conda install -c conda-forge motor -y \
-    && conda install -c conda-forge cchardet \
+    && conda install -c conda-forge cchardet -y\
     && conda install aiohttp -y \
     && conda install psutil -y 
 
-CMD ["python main.py"]
+CMD ["python","main.py"]
