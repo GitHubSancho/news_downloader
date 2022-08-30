@@ -1,7 +1,7 @@
 version: '0.9'
 services:
   news_downloader_pro:
-    build: .
+    build: /opt/news_downloader_pro/
     ports:
       - "5000:5000"
     volumes:
