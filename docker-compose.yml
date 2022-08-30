@@ -13,4 +13,4 @@ services:
     build: /opt/news_downloader_pro
     image: news_downloader_pro:v0.9
     restart: always
-    command: [ "python", "main.py" ]
+    command: [ "echo", "hello,world" ]
