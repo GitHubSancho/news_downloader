@@ -23,4 +23,4 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
     && conda install aiohttp -y \
     && conda install psutil -y 
 
-CMD ["bin/bash"]
+CMD ["python","main.py"]
