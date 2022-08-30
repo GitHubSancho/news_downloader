@@ -20,4 +20,5 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
     && conda install -c conda-forge motor  -y \
     && conda install -c conda-forge cchardet -y
 
-CMD ["python","main.py"]
+# CMD ["python","main.py"]
+CMD ["/bin/bash"]
