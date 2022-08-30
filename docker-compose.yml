@@ -12,7 +12,7 @@ services:
   engine:
     build: /opt/news_downloader_pro
     image: news_downloader_pro:v0.9
-    restart: always
+    # restart: always
     command:
       [
         "python",
