@@ -23,13 +23,14 @@ RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pk
     # && conda install aiohttp -y \
     # && conda install psutil -y 
     && conda install pyyaml pymongo aiohttp psutil -y \
-    && conda install -c conda-forge motor cchardet -y \
+    && conda install -c conda-forge motor  -y \
+    && conda install -c conda-forge cchardet -y
 
-    # RUN yum install curl -y \
-    #     && curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo \
-    #     && sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo \
-    #     && yum install mongodb-org -y\
-    #     && systemctl start mongod.service
+# RUN yum install curl -y \
+#     && curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo \
+#     && sed -i -e '/mirrors.cloud.aliyuncs.com/d' -e '/mirrors.aliyuncs.com/d' /etc/yum.repos.d/CentOS-Base.repo \
+#     && yum install mongodb-org -y\
+#     && systemctl start mongod.service
 
-    # CMD ["python","main.py"]
-    CMD ["/bin/bash"]
+# CMD ["python","main.py"]
+CMD ["/bin/bash"]
