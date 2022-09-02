@@ -2,9 +2,9 @@
 host: '127.0.0.1'
 port: 27017
 database: 'news_downloader_pro'
-collection: 'test151'
-user: ''
-password: ''
+collection: 'test001'
+user: 'dbadmin'
+password: '12345678'
 max_idle_time: 7 * 3600
 timeoutMS: 10*1000
 
