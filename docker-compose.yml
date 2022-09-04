@@ -36,6 +36,6 @@ services:
     image: news_downloader_pro:v0.9
     depends_on:
       - mongodb
-    command: [ "python", "test.py" ]
+    command: [ "python", "main.py" ]
     stdin_open: true
     tty: true
