@@ -1,14 +1,14 @@
-version: '4.0'
+version: '3'
 
 services:
 
-  mongo:
+  mongodb:
     image: mongo:5.0
-    container_name: mongo
+    container_name: mongodb
     restart: always
     ports:
       - "27017:27017"
-    command: --auth
+    # command: --auth
     volumes:
       - ./mongo/initdb:/docker-entrypoint-initdb.d
       - ./mongo/datadir:/data/db
@@ -16,23 +16,26 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: dbadmin
       MONGO_INITDB_ROOT_PASSWORD: 12345678
-      MINGO_INITDB_DATABASE: test001
+      # MINGO_INITDB_DATABASE: demo001
       TZ: Asia/Shanghai
 
   mongo-express:
     image: mongo-express
     restart: always
+    depends_on:
+      - mongodb
     ports:
-      - 80:8081
+      - 1999:8081
     environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_ADMINUSERNAME: dbadmin
       ME_CONFIG_MONGODB_ADMINPASSWORD: 12345678
-  # engine:
-  #   build: /opt/news_downloader_pro
-  #   image: news_downloader_pro:v0.9
-  #   # restart: always
-  #   command:
-  #     [
-  #       "python",
-  #       "/opt/news_downloader_pro/res/news_downloader_pro/main.py"
-  #     ]
+
+  engine:
+    build: .
+    image: news_downloader_pro:v0.9
+    depends_on:
+      - mongodb
+    command: [ "python", "test.py" ]
+    stdin_open: true
+    tty: true
