@@ -19,6 +19,18 @@ news_downloader -- 父工程
     └─ proxy.py -- ip代理模块
 ```
 
+## 程序流程
+1. main.py 会每两分钟调用一次 loader.py 读取配置文件
+2. main.py 将调用 connection.py 把去读到的新闻主页添加到mongodb
+3. main.py 拉取mongodb中待下载链接推入到 downloader.py 进行下载
+4. main.py 将下载后的网页及请求状态交给 html_parser.py 解析出网页内的链接
+5. main.py 把请求的网页和解析出的链接打上标签后，调用 connection.py 传入mongodb
+
+
+## 如何添加新闻网页？
+在 news_downloader_pro_hubs.yml 文件中以`- https://xxx`的格式添加
+
+
 ## 如何使用？
 有两种方式：
 - docker方式  
@@ -32,3 +44,7 @@ news_downloader -- 父工程
 3. 下载依赖文件：`pip install -r requirements.txt`
 4. 执行：`python ./res/news_downloader_pro/main.py`
 5. 在 Mongodb 中查看数据
+
+
+## 如何停止？
+程序会每两分钟检查一次配置文件 news_downloader_pro.yml ，当`exit`项为`True`时自动退出
