@@ -1,10 +1,10 @@
 #db
-host: 'mongodb'
+host: 'localhost' #'mongodb'
 port: 27017
-database: 'news_downloader_pro'
+database: 'news_downloader'
 collection: 'test001'
-user: 'dbadmin'
-password: '12345678'
+user: '' # 'dbadmin'
+password: '' # '12345678'
 max_idle_time: 7 * 3600
 timeoutMS: 10*1000
 
