@@ -10,13 +10,14 @@ news_downloader -- 父工程
 ├── newsdownloader_pro_hubs.yml -- 新闻主页配置文件
 ├── newsdownloader_pro_ua.yml -- User-Agent配置文件
 └── res/newsdownloader_pro -- 主要模块
-    ├─ test -- 测试代码
+    ├── test -- 测试代码
     ├── connection.py -- 数据库模块
     ├── downloader.py -- 下载器模块
     ├── html_parser.py -- 网页解析模块
     ├── loader.py -- 文件读取模块
     ├── main.py -- 程序入口
-    └─ proxy.py -- ip代理模块
+    ├── proxy.py -- ip代理模块
+    └── test.py -- 测试用例
 ```
 
 ## 程序流程
