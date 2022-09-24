@@ -1,15 +1,15 @@
-# news_downloader_pro
+# news_downloader
 
 ## 项目简介
-news_downloader_pro是一个新闻网页下载器，代码采用高并发设计，效率很高。
+news_downloader是一个新闻网页下载器，代码采用高并发设计，效率很高。
 
 ## 项目结构
 ```
 news_downloader -- 父工程
-├── newsdownloader_pro.yml -- 配置文件
-├── newsdownloader_pro_hubs.yml -- 新闻主页配置文件
-├── newsdownloader_pro_ua.yml -- User-Agent配置文件
-└── res/newsdownloader_pro -- 主要模块
+├── newsdownloader.yml -- 配置文件
+├── newsdownloader_hubs.yml -- 新闻主页配置文件
+├── newsdownloader_ua.yml -- User-Agent配置文件
+└── res/newsdownloader -- 主要模块
     ├── test -- 测试代码
     ├── connection.py -- 数据库模块
     ├── downloader.py -- 下载器模块
@@ -29,23 +29,23 @@ news_downloader -- 父工程
 
 
 ## 如何添加新闻网页？
-在 news_downloader_pro_hubs.yml 文件中以`- https://xxx`的格式添加
+在 news_downloader_hubs.yml 文件中以`- https://xxx`的格式添加
 
 
 ## 如何使用？
 有两种方式：
 - docker方式  
 > 下载docker + docker-compose  
-1. 克隆代码：`git clone https://github.com/GitHubSancho/news_downloader_pro.git`
+1. 克隆代码：`git clone https://github.com/GitHubSancho/news_downloader.git`
 2. 生成容器并运行：`docker-compose up`
 3. 打开浏览器查看数据库：`127.0.0.1:1999`
 - 普通方式  
 1. 克隆代码
 2. 安装 Mongodb 并启动服务
 3. 下载依赖文件：`pip install -r requirements.txt`
-4. 执行：`python ./res/news_downloader_pro/main.py`
+4. 执行：`python ./res/news_downloader/main.py`
 5. 在 Mongodb 中查看数据
 
 
 ## 如何停止？
-程序会每两分钟检查一次配置文件 news_downloader_pro.yml ，当`exit`项为`True`时自动退出
+程序会每两分钟检查一次配置文件 news_downloader.yml ，当`exit`项为`True`时自动退出
