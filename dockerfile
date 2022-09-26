@@ -3,8 +3,8 @@ LABEL author "Sancho"
 
 ENV PATH /opt/conda/bin:$PATH
 SHELL ["/bin/bash", "-c"]
-COPY . /opt/news_downloader_pro
-WORKDIR /opt/news_downloader_pro/res/news_downloader_pro
+COPY . /opt/news_downloader
+WORKDIR /opt/news_downloader/res/news_downloader
 
 
 RUN conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ \
